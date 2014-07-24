@@ -1,0 +1,10 @@
+{>"layouts/master" /}
+
+{<body}
+<form action="/event" method="POST">
+    <h1>{@pre type="content" key="greeting"/}</h1>
+    <label>Data</label><textarea id="events" name="events"></textarea>
+    <input type=submit>submit</a>
+    <input type="hidden" name="_csrf" value="{_csrf}"/>
+    </form>
+{/body}
