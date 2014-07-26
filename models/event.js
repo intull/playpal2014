@@ -7,16 +7,27 @@ var eventModel = function() {
         eventname: {
             type: String,
         },
-        start : {
+        start: {
             type: String,
         },
         end: {
             type: String
         },
-        teams: {
-            type: [String]
-        },
+        teams: [{
+            teamname: {
+                type: String
+            },
+            floorno: {
+                type: String
+            },
+            teamcaptain: {
+                type: String
+            }
+        }],
         winner: {
+            type: String
+        },
+        venue: {
             type: String
         }
     });

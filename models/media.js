@@ -4,13 +4,7 @@ var mongoose = require('mongoose');
 
 var mediaModel = function() {
     var mediaSchema = mongoose.Schema({
-        name: {
-            type: String
-        },
         path: {
-            type: String
-        },
-        description: {
             type: String
         },
         date: {

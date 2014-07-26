@@ -14,9 +14,20 @@ var teamModel = function() {
         gamename: {
             type: String
         },
-        players: {
-            type: [String]
-        },
+        players: [{
+            username: {
+                type: String
+            },
+            emailid: {
+                type: String
+            },
+            cubeno: {
+                type: String
+            },
+            mobileno: {
+                type: String
+            }
+        }],
         teamcaptain: {
             type: String
         }

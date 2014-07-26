@@ -15,7 +15,7 @@ var messageModel = function() {
         }
     });
 
-    return mongoose.model('messageList', mmessageSchema);
+    return mongoose.model('messageList', messageSchema);
 }
 
 module.exports = new messageModel();

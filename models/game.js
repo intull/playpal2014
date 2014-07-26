@@ -13,9 +13,23 @@ var gameModel = function() {
         rules: {
             type: String
         },
-        events: {
-            type: [String]
-        }
+        events: [{
+            eventname: {
+                type: String
+            },
+            start: {
+                type: String
+            },
+            end: {
+                type: String
+            },
+            venue: {
+                type: String
+            },
+            teams: {
+                type: [String]
+            }
+        }]
     });
 
     return mongoose.model('gameList', gameSchema);
