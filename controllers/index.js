@@ -2,15 +2,15 @@
 
 
 var IndexModel = require('../models/index');
-var models = require('../models/userProfile');
+var ProfileModel = require('../models/profile');
+var TeamModel = require('../models/team');
+var GameModel = require('../models/game');
 
 module.exports = function (router) {
 
     var model = new IndexModel();
     router.get('/', function (req, res) {
-        
-        res.render('index', model);
-        
+    	res.send('Hello index');
     });
 
 };

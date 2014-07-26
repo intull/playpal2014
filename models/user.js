@@ -16,7 +16,12 @@ var userModel = function() {
         }
     });
 
-    return mongoose.model('userList', userSchema);
+    userSchema.methods.passwordMatches = function (plainText) {
+        var user = this;
+        return user.password === plainText;
+    };
+
+    return mongoose.model('userlists', userSchema);
 }
 
 module.exports = new userModel();
