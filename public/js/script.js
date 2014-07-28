@@ -402,3 +402,80 @@ function displayUserAccount () {
     console.log("ss");
     $(".navbar-nav").append(listitem);
 }
+
+function sortImages(sampleJson) {
+  $('#imagediv').empty();  
+    sortDate(sampleJson);
+    var category = gamebtn.value;
+    for (eacp in sampleJson) {
+      var divtag = document.createElement("div");
+      var divtag = $("<div>",{
+        attr: {
+          "data-category": category,
+        },
+        class : "fader element-item "+category
+      });
+      var img = $("<img>",{
+        src:sampleJson[eacp]["path"],
+        click: viewImage,
+        class:"blog"
+      });
+      divtag.append(img);
+      $("#imagediv").append(divtag);
+    }
+      $("div.holder").jPages({
+        containerID : "imagediv",
+        perPage: 12
+      });
+
+}
+
+function getImageByCategory(category) {
+  if (category == "carrom") {
+    urllink = "api/carromimageCategory.json"
+  }
+  if (category == "foosball") {
+    urllink = "api/foosballimageCategory.json"
+  }
+  if (category == "all") {
+    urllink = "api/all.json"
+  }
+  $.ajax({
+        url: urllink,
+        dataType: "json",
+        method: "GET",
+        data: {
+            category: category
+        },
+        beforeSend: function() {
+            
+        },
+        cache: false,
+        success:function (sampleJson) {
+          $('#imagediv').empty();  
+          sortDate(sampleJson);
+          for (eacp in sampleJson) {
+            var divtag = document.createElement("div");
+            var divtag = $("<div>",{
+              attr: {
+                "data-category": category,
+              },
+              class : "fader element-item "+category
+            });
+            var img = $("<img>",{
+              src:sampleJson[eacp]["path"],
+              click: viewImage,
+              class:"blog"
+            });
+            divtag.append(img);
+            $("#imagediv").append(divtag);
+          }
+          $("div.holder").jPages({
+            containerID : "imagediv",
+            perPage: 12
+          });
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+        }
+    });
+}

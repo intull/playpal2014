@@ -19,6 +19,7 @@
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/bootstrap-lightbox.min.js"></script>
+    <script src="js/script.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,9 +77,6 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#">Contact Us</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/profile.html">My Account</a>
                     </li>
                 </ul>
               </div>
@@ -183,7 +181,7 @@
       <div class="container">
       <div class="row">
         <div class="col-md-2" >
-        <select class="form-control" onchange="getImage(this)" id="game" style="color:black">
+        <select class="form-control" onchange="getImageByCategory(this.value)" id="game" style="color:black">
           <option value="all">Show all</option>
           <option value="carrom">Carrom</option>
           <option value="athletic">Athletic</option>
@@ -195,7 +193,7 @@
           <option value="throwball">Throw ball</option>
           <option value="tabletennis">Table tennis</option>
           <option value="cricket">Cricket</option>
-          <option value="fooseball">Fooseball</option>
+          <option value="foosball">Fooseball</option>
           <option value="selfie">Selfie</option>
         </select></div>
         
@@ -348,7 +346,7 @@
       }
 
       $(document).ready(function() {
-          getImage(document.getElementById("game"));
+        $("#game").trigger("change");
           var date = new Date();
 
           var day = date.getDate();
