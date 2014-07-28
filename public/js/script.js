@@ -1,5 +1,6 @@
 var countdown =  $('.countdown-time');
 var username = "";
+var player = "";
 
 createTimeCicles();
 var gameToRegister="";
@@ -40,6 +41,7 @@ $(document).ready(function(){
     $('#ticker li:first').animate({'opacity':0}, 200, function () { $(this).appendTo($('#ticker')).css('opacity', 1); });
     }
     setInterval(function(){ tick () }, 4000);
+    displayUserAccount();
 });
 
 function sportsClicked(e){
@@ -93,7 +95,7 @@ function getGameDescription() {
 
 function showGameDescription(data) {
   data = data[0];
-  data.gamename = "badminton";
+  // data.gamename = "badminton";
   var modalContentWrapper = $("#modal-skeleton .modal-main-content");
   modalContentWrapper.html('<div class="row event-heading">\
                     <div class="col-md-12"><h2>'+data.gamename+'</h2></div>\
@@ -138,6 +140,7 @@ function showGameDescription(data) {
 }
 
 function registerEvent() {
+   player = $("#team").val();
    var gamename = $(this).attr("data-name"); 
    if ( ((gamename == "tabletennis" || gamename == "badminton") && $("#single-register").prop("checked")) ) {
         gamename = gamename+"-single";
@@ -151,25 +154,30 @@ function registerEvent() {
 }
 
 function register(game) {
-  // if (!authenticate()) {
-  //   return false;
-  // }
+  alert(game);
+  if (!authenticate()) {
+    alert(false);
+    return false;
+  }
   var players = username;
-  if (game == "foosball" || game == "carrom" || game == "tabletennis" || game == "badminton") {
-    if (!validateEmail($("#team").val())) {
+  alert(game);
+  alert(players);
+  if (game == "Foosball" || game == "carrom" || game == "tabletennis" || game == "badminton") {
+    alert(player);
+    if (!validateEmail(player)) {
       alert("Enter valid email Address");
       return false;
     } else {
-      players += $("#team").val();
+      players += "," + player;
     }
   }
 
-
+  alert(players);
   $.ajax({
-        url: "api/registerEvent.json",
+        url: "http://localhost:8000/api/registration/new",
         dataType: "json",
-        data:{"eventname":game,"players":players},
-        method: "POST",
+        data:{"gamename":game,"players":players},
+        method: "GET",
         beforeSend: function() {
             
         },
@@ -370,4 +378,27 @@ function handleTweets(tweets){
       }
       html += '</ul>';
       element.innerHTML = html;
+}
+
+function displayUserAccount () {
+    var listitem = $("<li>");
+    if (authenticate()) {
+      listitem.html($("<a>",{
+        class:"page-scroll",
+        href:"/profile.html",
+        text:"My Account",
+        click:function function_name (argument) {
+          // body...
+        }
+      }));
+    } else {
+      listitem.html($("<a>",{
+        class:"page-scroll",
+        href:"#",
+        text:"Login",
+        click:showLoginSignUpModal
+      }));
+    }
+    console.log("ss");
+    $(".navbar-nav").append(listitem);
 }

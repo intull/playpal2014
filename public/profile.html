@@ -1,0 +1,178 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link href="css/grayscale.css" rel="stylesheet">
+
+<style type="text/css">
+    .pic {
+      display: block;
+      max-width:310px;
+      max-height:175px;
+      width: auto;
+      height: auto;
+  }
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 999px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+#userinfo p {
+  margin-bottom: 5px;
+}
+.userinfo,
+.about {
+  font-size: 16px;
+}
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+        var sampleJson = JSON.parse('[{"username":"Arshia Garg","email":"arsgargh@paypal.com","floorno":"1.7.78","mobileno":"8489772322","team":"G-Ops","games":["Carrom","Foosball","Cricket"],"about":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}]');
+         $.each(sampleJson, function() {
+          $.each(this, function(k, v) {
+            if ( k != "games" && k != "about" ) {
+              var ptag = $("<p>",{
+                class : "userinfo"
+              }).text(v);
+              $("#userinfo").append(ptag);  
+            }
+          });
+        });
+        $.each(sampleJson[0]["games"], function( index, v ) {
+            var ptag = $("<p>",{
+              attr: {
+                  id: v
+              },
+              click:function() {
+                alert('hi');
+                var events = JSON.parse ([{"date": "Mon Jul 08","title": "Quater Finals","time": "3:00-5:00","compe": "TeamA","score": "55","result": "Lost"},{"date": "Mon Jul 09","title": "Quater Finals","time": "3:00-5:00","compe": "TeamB","score": "70","result": "Won"}]);
+                alert(events[0]["date"]);
+              }
+              ,class : "usergame"
+            }).text(v);
+            $("#games").append(ptag);
+        });
+        var ptag = $("<p>",{
+          class : "about"
+        }).text(sampleJson[0]["about"]);
+        $("#about").append(ptag);
+
+    });
+    $(function() {    
+      $(".updatepicture").hide();
+      $('.profile-pic').hover(function() {
+           $(this).find('.updatepicture').fadeIn(150);
+      }, function() {
+          $(this).find('.updatepicture').fadeOut(150); 
+      });
+  });
+</script>
+</head>
+<body>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#content-1">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#events">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#scoreTeam">Score</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#tweets-wrapper">Tweets</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="schedule.html">Schedule</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+</nav>
+ <section class="games-container container">
+<div class="container" style="color:black;">
+        <div class="row well">
+          <div class="col-md-12">
+            <div class="profile-pic col-md-4">
+              <img class="pic" src="img/profile.jpg"alt="...">
+              <span class="updatepicture fileinput btn btn-primary btn-file" style="position:absolute;bottom:0;left:0">
+                  Update Picture<input id="profilepic" type="file" multiple="">
+              </span>
+            </div>
+            <div class="panel col-md-8">
+            <div  id="userinfo" class="col-md-5"></div>
+            <div  class="col-md-7">
+              <div  class="row">
+                  <div id="about">
+                  </div>
+              </div>
+              <div class="row">
+                <button type="button" class="btn btn-primary">Update</button>&nbsp;
+                <input type="text" class="form-control" placeholder="Enter about yourself" style="width:70%;display:inline" />
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <ul class="nav nav-tabs" id="myTab">
+          <li class="active">
+            <a data-toggle="tab" style="width:200%">GAMES</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="inbox">
+                  <a type="button" data-toggle="collapse" data-target="#selectgame">
+                      <div id="games" class="btn-toolbar well well-sm" role="toolbar"  style="margin:0px;"></div>
+                  </a>
+                  <div id="selectgame" class="collapse out well">
+                  </div>
+                  <br>
+            </div>
+        </div>
+      </div>
+</div>
+</section>
+
+</body>
+</html>
+
+
+
