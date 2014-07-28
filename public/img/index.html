@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Playpal2014</title>
+          <script src="js/jquery-1.11.0.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+    function signup (){
+        window.location="signup.html";
+    }
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <!-- jQuery Version 1.11.0 -->
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<section id="content-1" class="content-1">
+    <div class="video-background page-scroll">                        
+                    <video id="video-1" loop="loop" autoplay="autoplay" preload="auto">
+                        <source type="video/mp4" src="video/video.mp4">
+                        <source type="video/ogg" src="video/video.ogv">
+                        <source type="video/webm" src="video/video.webm">
+                    </video>                            
+    </div> 
+</section>
+  <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">PlayPal 2014</h1>
+                        <p class="intro-text">Time to have fun!<br>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+    <!-- Navigation -->
+
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+<!--                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap -->
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="schedule.html">Schedule</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#scoreTeam">Score</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!--modal -->
+    <div class="modal fade" id="modal-1">
+        <div class="modal-content-wrapper">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <div class="row event-heading">
+                <div class="col-md-12"><h2>Foosball</h2></div>
+            </div>
+            <div class="row">
+                 <div class="col-md-2"></div>
+                 <div class="col-md-4"><div class="polaroid"><img src="games/fooseball.jpg" class="img-responsive" /></div></div>
+                 <div class="col-md-4">
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="button-wrapper row">
+                    <div class="col-md-6"><button type="button" class="btn btn-default btn-success" onclick="signup()"><span class="glyphicon glyphicon-plus"></span> Register</button></div>
+                    <div class="col-md-6"><button type="button" class="btn btn-default btn-success"><span class="glyphicon glyphicon-circle-arrow-down"></span> Rules</button></div>
+                </div>
+                </div>
+                 <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+
+     <div class="modal" id="modal-game1">
+        <div class="modal-content-wrapper">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <div class = "row event-heading">
+            <div class = "col-md-12"><h2>GameWise Scores<h2></div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-2"></div>
+            <div class = "col-md-8">
+        <table id = "GCAP" class = "table table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr >
+                <th>Date</th>
+                <th>Game</th>
+                <th>Time</th>
+                <th>Played Against</th>
+                <th>Score</th>
+                <th>Result</th>
+            </tr>
+            </thead>
+            <tbody id = "gcapBody">
+            </tbody>
+        </table>
+    </div>
+        <div class = "col-md-2"></div>
+    </div>
+     </div>
+ </div>
+
+    <div class="check modal fade" id="modal-day1">
+        <div class="modal-content-wrapper">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <div class="row event-heading">
+                <div class="col-md-12"><h2>Games</h2></div>
+            </div>
+            <div class="row">  
+             <div class = "col-sm-1"></div>
+             <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                <img class ="blog" src="cricket.png" alt="">
+            </div>
+            <div data-toggle="modal" data-target="#modal-1"class="fader col-sm-1" >
+                <img class ="revCustomer" src="foosball.png" alt="">
+            </div>
+            <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-1">
+                <img class ="revCustomer" src="volleyball.jpg" alt="">
+            </div>
+            <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-day1">
+                <img class ="revCustomer" src="football.png" alt=""  >
+            </div>
+            <div data-toggle="modal" data-target="#modal-1"class="fader col-sm-1" >
+                <img class ="revCustomer" src="carrom.jpg" alt="">
+            </div>
+             <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-1">
+                   <img class ="revCustomer" src="badminton.jpg" alt="">
+                 </div>
+                 <div class="col-sm-1"></div>
+            </div>
+            <div class="row fader" data-toggle="modal" data-target="#modal-1">
+            
+            
+            </div>
+            
+            <div class="row">
+                 <div class="col-sm-1"></div>
+                 <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-day1">
+                    <img class ="revCustomer" src="tennis.jpg" alt=""  >
+                    <label> Tennis </label>
+                 </div>
+                 <div data-toggle="modal" data-target="#modal-1"class="fader col-sm-1" >
+                    <img class ="revCustomer" src="athletics.png" alt="">
+                 </div>
+                 <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-1">
+                    <img class ="revCustomer" src="chess.jpg" alt="">
+                 </div>
+                 <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-1">
+                   <img class ="revCustomer" src="basketball.gif" alt="">
+                 </div>
+                 <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-1">
+                   <img class ="revCustomer" src="tableTennis.jpg" alt="">
+                 </div>
+                 <div class="fader col-sm-1" data-toggle="modal" data-target="#modal-1">
+                   <img class ="revCustomer" src="throwBall.jpg" alt="">
+                 </div>
+                 <div class="col-sm-1"></div>
+                 
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="games-container container">
+    <div id="menu">
+
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+            
+            <img class ="blog" src="games/carrom.jpg" alt=""  >
+            </div>
+            
+        <div data-toggle="modal" data-target="#modal-1"class="fader" >
+            
+
+                <img class ="blog" src="games/athletic.jpg" alt="">
+            </div>
+            
+      <div class="fader" data-toggle="modal" data-target="#modal-1">
+
+                <img class ="blog" src="games/badminton.jpg" alt="">
+        </div>
+            
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/basketball.jpg" alt="">
+            </div>
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/chess.jpg" alt="">
+            </div>
+            
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/cricket.jpg" alt="">
+            </div>
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/fooseball.jpg" alt="">
+            </div>
+            
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/tabletennis.jpg" alt="">
+            </div>
+            
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/volleyball.jpg" alt="">
+            </div>
+            <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/snooker.jpg" alt="">
+            </div>
+            <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/football.jpg" alt="">
+            </div>
+            <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="games/throwball.JPG" alt="">
+            </div>
+            
+        </div>
+            </section>
+       
+<section id="scoreTeam" class="games-container container">
+    <div id="menu">
+        
+        <div class="fader" data-toggle="modal" data-target="#modal-day1">
+            
+            <img class ="blog" src="img/AP.png" alt=""  >
+            </div>
+            
+        <div data-toggle="modal" data-target="#modal-day1"class="fader" >
+            
+
+                <img class ="blog" src="img/BB.png" alt="">
+            </div>
+            
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+
+                <img class ="blog" src="img/MRH.png" alt="">
+        </div>
+         <div class="fader" data-toggle="modal" data-target="#modal-1">
+
+               
+        </div>
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+
+               
+        </div>
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+
+               
+        </div>
+            
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="img/SS.png" alt="">
+            </div>
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="img/LL.png" alt="">
+            </div>
+            
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+                <img class ="blog" src="img/KD.png" alt="">
+            </div>
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+
+               
+        </div>
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+
+               
+        </div>
+        <div class="fader" data-toggle="modal" data-target="#modal-1">
+
+               
+        </div>
+            
+        </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="text-center">
+           Copyright &copy; Your Website 2014
+        </div>
+    </footer>
+
+
+      <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+ 
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="tiles.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/video.js"></script>
+    <script src="js/bigvideo.js"></script>
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+    <script>
+      $(function(){
+        $('.carousel').carousel({
+            auto: false,
+            period: 3000,
+            duration: 2000,
+            markers: {
+            type: "square"
+            }
+        });
+    });
+      $(".check").on('click', function(e){
+        e.preventDefault();
+        $("#modal-day1").modal("hide");
+        console.log("in populate function")
+        $.ajax({
+        url: 'http://localhost/gcapjson.php',
+        type: "GET",
+        dataType: "json",
+        success: function(response){
+            response = response.data;
+        var tabValue = "";
+        for(i = 0;i < response.length; i++){
+         var rowValue = ""
+         rowValue  += "<td>"+ response[i].date + "</td>" +"<td>"+ response[i].title + "</td>" +"<td>"+ response[i].time + "</td>" +"<td>"+ response[i].compe + "</td>" +"<td>"+ response[i].score + "</td>" + "<td>"  + response[i].result + "</td>" 
+         rowValue = "<tr>" + rowValue + "</tr>"
+         tabValue += rowValue;
+         }
+        
+         $("#gcapBody").html(tabValue);
+     },
+     error: function(A,B,C){
+        console.log(A);
+        console.log(B);
+        console.log(C);
+        alert("error");
+     },
+     cache:false
+     });
+    });
+      </script>
+      <style type = "text/css">
+        .revCustomer {
+           -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            position: relative;
+        }
+      label{
+        font-color: white;
+        font-size: 20px;
+      }
+      </style>
+
+</body>
+
+</html>

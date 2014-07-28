@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Playpal2014</title>
+    <script src="js/jquery-1.11.0.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.pages.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap-lightbox.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <!-- jQuery Version 1.11.0 -->
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+    <!-- Navigation -->
+
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+<!--                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap -->
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+               <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                 <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li>
+                        <a class="page-scroll" href="index.html#content-1">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#events">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#scoreTeam">Score</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#tweets-wrapper">Tweets</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="schedule.html">Schedule</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Contact Us</a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!--modal for viewing image-->
+    <div class="modal fade" id="modal-1">
+        <div class="modal-content-wrapper">
+            <button type="button" class="close" data-dismiss="modal">X</button><br><br><br>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8"><center><img  id="modalimage" src="" class="img-responsive"></center></div>
+                  <div class="col-md-2"></div>
+                 
+                </div>
+                <div class="row">
+                  
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8"> <center><button type="button" class="btn btn-primary" style="position:relative; margin:10px auto;" data-dismiss="modal">Share on Facebook</button></center></div>
+                  <div class="col-md-2"></div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+    </div>
+
+    <!--modal for uploading image-->
+    <div class="modal fade" id="modal-2">
+        <div class="modal-content-wrapper">
+          <button type="button" class="close btn btn-xs" data-dismiss="modal" s>X</button><br><br><br>
+          <form  action="upload.html" method="POST">
+          <div id="uplfile">
+          <div class="row">
+          <div class="col-md-3"></div>
+            <div class="col-md-8">
+              <input class="col-md-3" type="file" value="Choose File"/>
+                <select class="col-md-2" name="category" style="color:black">
+                <option value="null">Choose Sport</option>
+                  <option value="carrom">Carrom</option>
+                  <option value="basketball">Basketball</option>
+                  <option value="athletics">Athletics</option>
+                  <option value="badminton">Badminton</option>
+                  <option value="chess">Chess</option>
+                  <option value="cricket">Cricket</option>
+                  <option value="foosball">Foosball</option>
+                  <option value="tabletennis">Tabletennis</option>
+                  <option value="volleyball">Volleyball</option>
+                  <option value="snooker">Snooker</option>
+                  <option value="football">Football</option>
+                  <option value="throwball">Throwball</option>
+                  <option value="selfie">Selfie</option>
+                </select>
+              <div class="col-md-1"></div>
+              <input id="thedate1" type="date" class="btn btn-success col-md-2" value="Select date" style="width:155px; height:25px">&nbsp;<br><br>
+            </div>
+        </div>
+        </div>
+        <div class="row" id="addfile" style="display:none">
+            <div class="col-md-3"></div>
+            <div class="col-md-8">
+              <input class="col-md-3"  class="file-input-wrapper" type="file" value="Choose File"/>
+                <select class="col-md-2"name="category" style="color:black">
+                <option value="null">Choose Sport</option>
+                  <option value="carrom">Carrom</option>
+                  <option value="basketball">Basketball</option>
+                  <option value="athletics">Athletics</option>
+                  <option value="badminton">Badminton</option>
+                  <option value="chess">Chess</option>
+                  <option value="cricket">Cricket</option>
+                  <option value="foosball">Foosball</option>
+                  <option value="tabletennis">Tabletennis</option>
+                  <option value="volleyball">Volleyball</option>
+                  <option value="snooker">Snooker</option>
+                  <option value="football">Football</option>
+                  <option value="throwball">Throwball</option>
+                  <option value="selfie">Selfie</option>
+                </select>
+              <div class="col-md-1"></div>
+              <input id="thedate2" type="date" class="btn btn-success col-md-2" value="Select date" style="width:155px; height:25px">&nbsp;
+               <input type="button" class="btn btn-danger btn btn-xs " value="X" onclick="this.parentNode.remove();"><br><br>
+            </div>
+        </div><br><br><br><br>
+        
+        <div class="col-md-4"></div>
+        <input type="button" class="btn btn-success pull-left" style="width:155px; height:25px" value="Add File" onclick="add()"/>
+        <div class="col-md-1"></div>
+        <input type="submit" class="btn btn-success pull-left" style="width:155px; height:25px" value="Submit"/><br> <br>
+        <div class="col-md-2"></div>
+        </div>
+        </div></form>
+        
+    </div>
+    <!-- About Section -->
+    <section id="about" class="games-container container">
+      <div class="container">
+      <div class="row">
+        <div class="col-md-2" >
+        <select class="form-control" onchange="getImage(this)" id="game" style="color:black">
+          <option value="all">Show all</option>
+          <option value="carrom">Carrom</option>
+          <option value="athletic">Athletic</option>
+          <option value="badminton">Badminton</option>
+          <option value="basketball">Basket ball</option>
+          <option value="chess">Chess</option>
+          <option value="football">Foot Ball</option>
+          <option value="volleyball">Volley ball</option>
+          <option value="throwball">Throw ball</option>
+          <option value="tabletennis">Table tennis</option>
+          <option value="cricket">Cricket</option>
+          <option value="fooseball">Fooseball</option>
+          <option value="selfie">Selfie</option>
+        </select></div>
+        
+        <div class="col-md-10" >
+          <div class="btn pull-right" data-toggle="modal" data-target="#modal-2" style="padding-right:5%">
+              <button class="btn" type="button" style="color:black">Upload Image</button>
+        </div>
+        </div>
+      </div>
+          <div class="container" style="">
+      <div class="col-md-5"></div>
+      <div class="holder">
+    </div>
+
+        <div class="isotope">  
+          <div id="imagediv">
+
+          </div>
+        </div>
+    </section>
+</div>
+    
+
+      <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+    <link href="css/bootstrap-lightbox.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/tiles.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/video.js"></script>
+    <script src="js/bigvideo.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+    <style type="text/css">
+    .isotope {
+        margin-top: 20px;
+    }
+    .isotope .element-item{
+        padding: 5px;
+    }
+    .btn-default:disabled,
+    .btn-default {
+    
+      border-radius: 0px;
+      margin-bottom: 4px;
+
+      font-size: 20px;
+      border: 1px solid #d3d3d3;
+      color: #d3d3d3;
+      background-color: transparent;
+
+    }
+    .btn.active {
+      border: 1px solid #219ab3;
+      color: #000;
+      background-color: #219ab3;
+    }
+
+    .isotope .element-item img{
+      border:5px solid #000;
+    }
+    body {
+        background: url(img/background2.jpg) fixed;
+    }
+    </style>
+    <script type="text/javascript">
+        var first = true;
+        function sortDate(arr) {
+          arr = arr.sort(function(a, b) {        
+              var date1 = Date.parse(a["date"]);
+              var date2 = Date.parse(b["date"]);
+              return date1 < date2;
+          });
+        }
+
+
+        function getImage(gamebtn) {
+          $('#imagediv').empty();
+          var sampleJson = JSON.parse('[{"path": "games/'+gamebtn.value+'.jpg","date": "2014-05-22"},{"path": "games/carrom.jpg","date": "2014-06-22"}]');
+            
+            sortDate(sampleJson);
+            var category = gamebtn.value;
+            for (eacp in sampleJson) {
+              var divtag = document.createElement("div");
+              var divtag = $("<div>",{
+                attr: {
+                  "data-category": category,
+                },
+                class : "fader element-item "+category
+              });
+              var img = $("<img>",{
+                src:sampleJson[eacp]["path"],
+                click: viewImage,
+                class:"blog"
+              });
+              divtag.append(img);
+              $("#imagediv").append(divtag);
+            }
+              $("div.holder").jPages({
+                containerID : "imagediv",
+                perPage: 12
+              });
+
+        }
+        function viewImage() {
+          var src = $(this).attr("src");
+          document.getElementById("modalimage").setAttribute("src",src);
+          $("#modal-1").modal("show");
+        }
+
+        $( function() {
+          // init Isotope
+          var $container = $('.isotope').isotope({
+            itemSelector: '.element-item',
+            layoutMode: 'fitRows'
+          });
+
+          // bind filter button click
+          $('#filters').on( 'click', 'button', function() {
+            var filterValue = $( this ).attr('data-filter');
+            $container.isotope({ filter: filterValue });
+          });
+          $(".btn").click(function(){
+            $(".active").removeClass("active");
+          });
+        });
+
+      function add() {
+        if(first) {
+          var element = document.getElementById("addfile");
+          var copyele = element.cloneNode(true);
+          copyele.setAttribute("style","display:none");
+          var file = document.getElementById("uplfile");
+          file.appendChild(copyele);
+          first = false;
+        }
+        var element = document.getElementById("addfile");
+        var copyele = element.cloneNode(true);
+        copyele.setAttribute("style","display:block");
+        var file = document.getElementById("uplfile");
+        file.appendChild(copyele);
+      }
+
+      $(document).ready(function() {
+          getImage(document.getElementById("game"));
+          var date = new Date();
+
+          var day = date.getDate();
+          var month = date.getMonth() + 1;
+          var year = date.getFullYear();
+
+          if (month < 10) month = "0" + month;
+          if (day < 10) day = "0" + day;
+          var today = year + "-" + month + "-" + day;       
+          var dataele = document.getElementById("thedate1");
+          var dataele2 = document.getElementById("thedate2");
+          dataele.setAttribute("value", today);
+          dataele2.setAttribute("value", today);
+      });
+
+
+    </script>
+
+    <style type="text/css">
+     .btn-success {
+        margin-top: 5px;
+        width: 100%;
+        height: 44px;
+        font-size: 22px;
+        line-height: 28px;
+      }
+      .modal {
+        background-color: rgba(0,0,0,.8);
+      }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Playpal2014</title>
+          <script src="js/jquery-1.11.0.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+    function signup (){
+        window.location="signup.html";
+    }
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <!-- jQuery Version 1.11.0 -->
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<section id="content-1" class="content-1">
+    <div class="video-background page-scroll">                        
+        <video id="video-1" loop="loop" autoplay="autoplay" preload="auto">
+            <source type="video/mp4" src="video/video.mp4">
+            <source type="video/ogg" src="video/video.ogv">
+            <source type="video/webm" src="video/video.webm">
+        </video>                            
+    </div> 
+</section>
+  <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <section id="counter" class="content-section text-center">
+                    <div class="counter-section">
+                        <div class="container">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <h1 class="brand-heading">PlayPal 2014</h1>
+                                <div class="i_cicle">
+                                    <!-- Timer: Your date here -->
+                                    <div class="countdown-time animated bounceIn" data-date="2014-08-15 00:00:00" data-timer="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <div class="container">
+                <!--style="position:relative; bottom:-200px; text-align:center; right:200px; overflow:hidden"
+                 style="position:relative;  bottom:-200px; text-align:center;"
+                 style="position:relative;  bottom:-200px; left:200px; text-align:center;" 
+                  -->
+                 <div class="col-md-9">
+                     <div class="message-wrapper">
+                         <div class="col-md-3"><img src="img/anupam.jpg" class="responsive revCustomer"></div>
+                         <div class="message col-md-9">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" <br/> - Anupam Pahuja, GM PayPal IDC</div>
+                     </div>
+                </div>
+
+                 <div class="col-md-3 mascot">
+                    <img src="img/panda.png" class="responsive">
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+    <!-- Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#content-1">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#events">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#scoreTeam">Score</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#tweets-wrapper">Tweets</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="schedule.html">Schedule</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!--modal For game events-->
+    <div class="modal fade" id="modal-skeleton">
+        <div class="modal-content-wrapper">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <div class="modal-main-content">
+                
+            </div>
+        </div>
+    </div>
+    <!-- Modal for signup & login -->
+
+    <div style="display:none" id="loginSignUpModal">
+        
+        <div class="row-fluid" style="padding-top: 10%">
+            <div class="col-md-1"></div>
+            <div class="col-md-5" style="border-right:1px solid #ccc">
+
+            <form class="form-horizontal" role="form">
+            <div class="form-group" style="padding-left:25%">
+                <h2 class="col-sm-6"><i class="fa fa-user">&nbsp;SIGN UP HERE</i></h2>
+              </div>
+              <div class="form-group">
+                <label for="name"  class="col-sm-3 control-label">Full name</label>
+                <div class="col-sm-4">
+                  <input type="name" class="form-control" id="name" placeholder="Full name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label id="left" for="password" class="col-sm-3 control-label">Password</label>
+                <div class="col-sm-4">
+                  <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="floornumber" class="col-sm-3 control-label">Floor number</label>
+                <div class="col-sm-4">
+                    <input type="text" id='floornumber' name="floornumber" class="form-control" placeholder='Enter floor number'>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cubenumber" class="col-sm-3 control-label">Cube number</label>
+                <div class="col-sm-4">
+                    <input type="text" id='cubenumber' name="cubenumber" class="form-control" placeholder='Enter cube number'>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Email id</label>
+                <div class="col-sm-4">
+                    <input type="text" id='email' name="email" class="form-control" placeholder='Enter email id'>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mobnumber" class="col-sm-3 control-label">Mobile number</label>
+                <div class="col-sm-4">
+                    <input type="text" name="mobnumber" id='mobnumber' class="form-control" placeholder='Enter mobile number'>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <button class="btn btn-default" style="float:left;" id="signup">Sign up</button>&nbsp;
+                  <button type="reset" class="btn btn-default" style="float:left; margin-left:10px" >Reset</button>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+
+            </form>
+             </div>
+
+            <div class="col-md-5" style="padding-left:5%">
+            <form class="form-horizontal" role="form">
+            <div class="form-group" style="padding-left:25%">
+                <h2 class="col-sm-6"><i class="fa fa-sign-in">&nbsp;SIGN IN</i></h2>
+              </div>
+              <div class="form-group">
+                <label for="login_email" class="col-sm-3 control-label">Username</label>
+                <div class="col-sm-5">
+                  <input type="email" class="form-control" id="login_email" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="login_password" class="col-sm-3 control-label">Password</label>
+                <div class="col-sm-5">
+                  <input type="password" class="form-control" id="login_password" placeholder="Password" name="login_password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-3">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-3">
+                  <button id="login" class="btn btn-default">Sign in</button>&nbsp;
+                </div>
+              </div>
+
+            </form>
+            </div>
+
+            </div>
+
+    </div> 
+    <!-- Modal for signup & login -->
+
+    
+
+    <!-- About Section -->
+    <section id="events" class="games-container container">
+        <section>   
+            <ul id="ticker">
+                <li>
+                    Registrations for PlayPal are now open.
+                </li>
+                <li>
+                    PlayPal website launched today. 
+                </li>
+                <li>
+                    Tweet with <a href="#">#PlayPal2014</a> with your favourite team <a href="#">@PlayPal14.</a>
+                </li>
+
+            </ul>
+        </section>
+        <h1>Events</h1>
+        <div id="menu">
+
+            <div class="fader game" data-name="carrom">
+                    <img class ="blog" src="games/carrom.jpg" alt="" >
+            </div>
+                
+            <div class="fader game"  data-name="atheletic">
+                    <img class ="blog" src="games/athletic.jpg" alt="">
+            </div>
+                
+            <div class="fader game"   data-name="badminton">
+                    <img class ="blog" src="games/badminton.jpg" alt="">
+            </div>
+                
+            <div class="fader game"   data-name="basketball">
+                    <img class ="blog" src="games/basketball.jpg" alt="">
+            </div>
+            <div class="fader game"   data-name="chess">
+                    <img class ="blog" src="games/chess.jpg" alt="">
+            </div>
+                
+            <div class="fader game"   data-name="cricket">
+                    <img class ="blog" src="games/cricket.jpg" alt="">
+            </div>
+            <div class="fader game"   data-name="Foosball">
+                    <img class ="blog" src="games/fooseball.jpg" alt="">
+            </div>
+                
+            <div class="fader game"   data-name="tabletennis">
+                    <img class ="blog" src="games/tabletennis.jpg" alt="">
+            </div>
+                
+            <div class="fader game"   data-name="volleyball">
+                    <img class ="blog" src="games/volleyball.jpg" alt="">
+            </div>
+            <div class="fader game"   data-name="snooker">
+                    <img class ="blog" src="games/snooker.jpg" alt="">
+            </div>
+            <div class="fader game"   data-name="football">
+                    <img class ="blog" src="games/football.jpg" alt="">
+            </div>
+            <div class="fader game"   data-name="throwball">
+                    <img class ="blog" src="games/throwball.JPG" alt="">
+            </div>
+                
+            </div>
+    </section>
+
+    <section id="scoreTeam" class="games-container container">
+        <h1>Scores</h1>
+        <div id="menu">   
+            <div class="fader" data-toggle="modal" data-target="#modal-day1">
+                <img class ="blog" src="img/AP.png" alt=""  >
+                <div class="score" style="">Score: 97</div>
+            </div>
+            <div data-toggle="modal" data-target="#modal-day1"class="fader" >
+                <img class ="blog" src="img/BB.png" alt="">
+                <div class="score" style="">Score: 83</div>
+            </div>
+            <div class="fader" data-toggle="modal" data-target="#modal-day1">
+                <img class ="blog" src="img/MRH.png" alt="">
+                <div class="score" style="">Score: 79</div>
+            </div>
+            <div style="width:100%; height:90px;"></div>
+            <div class="fader" data-toggle="modal" data-target="#modal-day1">
+                <img class ="blog" src="img/SS.png" alt="">
+                <div class="score" style="">Score: 77</div>
+            </div>
+            <div class="fader" data-toggle="modal" data-target="#modal-day1">
+                <img class ="blog" src="img/LL.png" alt="">
+                <div class="score" style="">Score: 73</div>
+            </div>   
+            <div class="fader" data-toggle="modal" data-target="#modal-day1">
+                <img class ="blog" src="img/KD.png" alt="">
+                <div class="score" style="">Score: 68</div>
+            </div> 
+            <div style="width:100%; height:90px;"></div>
+        </div>
+    </section>
+
+    <section id="tweets-wrapper">
+        <h1>#PayPal2014 Live !!</h1>
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <!--<div class="col-md-5"></div><div class="col-md-2"><img src="img/loader.gif" class="responsive"></div><div class="col-md-5"></div>-->
+            </div>
+            <div class="col-md-12" id="twitter"></div>
+            <div class="col-md-12 trending-teams"> <img src="img/fire.gif" style="display:inline;" />Trending Teams: <a href="#">#eBay</a>, <a href="#">#iPhone</a>, <a href="#">#buyNow</a></div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="text-center">
+           Copyright &copy; PlayPal 2014
+        </div>
+    </footer>
+
+    <!-- day 1 modal -->
+    <div class="check modal fade" id="modal-day1">
+        <div class="modal-content-wrapper">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <div class="row event-heading">
+                <div class="col-md-12"><h2>Games</h2></div>
+            </div>
+            <div class="row">  
+             <div class = "col-sm-1"></div>
+             <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                <img class ="blog" src="img/cricket.png" alt="">
+            </div>
+            <div data-toggle="modal" data-target="#modal-1"class="icon col-sm-1" >
+                <img class ="revCustomer" src="img/foosball.png" alt="">
+            </div>
+            <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                <img class ="revCustomer" src="img/volleyball.jpg" alt="">
+            </div>
+            <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                <img class ="revCustomer" src="img/football.png" alt=""  >
+            </div>
+            <div data-toggle="modal" data-target="#modal-game1"class="icon col-sm-1" >
+                <img class ="revCustomer" src="img/carrom.jpg" alt="">
+            </div>
+             <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                   <img class ="revCustomer" src="img/badminton.jpg" alt="">
+                 </div>
+                 <div class="col-sm-1"></div>
+            </div>
+            <div class="row icon" data-toggle="modal" data-target="#modal-game1">
+            
+            
+            </div>
+            
+            <div class="row">
+                 <div class="col-sm-1"></div>
+                 <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                    <img class ="revCustomer" src="img/tennis.jpg" alt=""  >
+                    <label> Tennis </label>
+                 </div>
+                 <div data-toggle="modal" data-target="#modal-game1"class="icon col-sm-1" >
+                    <img class ="revCustomer" src="img/athletics.png" alt="">
+                 </div>
+                 <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                    <img class ="revCustomer" src="img/chess.jpg" alt="">
+                 </div>
+                 <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                   <img class ="revCustomer" src="img/basketball.gif" alt="">
+                 </div>
+                 <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                   <img class ="revCustomer" src="img/tableTennis.jpg" alt="">
+                 </div>
+                 <div class="icon col-sm-1" data-toggle="modal" data-target="#modal-game1">
+                   <img class ="revCustomer" src="img/throwBall.jpg" alt="">
+                 </div>
+                 <div class="col-sm-1"></div>
+                 
+            </div>
+        </div>
+    </div>
+
+    <!-- modal game score -->
+
+     <div class="modal" id="modal-game1">
+        <div class="modal-content-wrapper">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <div class = "row event-heading">
+            <div class = "col-md-12"><h2>GameWise Scores<h2></div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-2"></div>
+            <div class = "col-md-8">
+        <table id = "GCAP" class = "table table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr >
+                <th>Date</th>
+                <th>Game</th>
+                <th>Time</th>
+                <th>Played Against</th>
+                <th>Score</th>
+                <th>Result</th>
+            </tr>
+            </thead>
+            <tbody id = "gcapBody">
+            </tbody>
+        </table>
+    </div>
+        <div class = "col-md-2"></div>
+    </div>
+     </div>
+    </div>
+
+      <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+ 
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="css/tiles.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/video.js"></script>
+    <script src="js/bigvideo.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+    <!-- new js and css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/TimeCircles.js"></script>
+    <script src="js/twitterFetcher_v10_min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
