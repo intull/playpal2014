@@ -6,7 +6,10 @@ var kraken = require('kraken-js'),
     passport = require('passport'),
     auth = require('./lib/auth'),
     Profile = require('./models/profile'),
-    app = require('express')(),
+    express = require('express'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    app = express(),
     options = {
         onconfig: function (config, next) {
             //any config setup/overrides here
@@ -23,17 +26,20 @@ app.use(kraken(options));
 app.on('middleware:after:session', function configPassport(eventargs) {
     passport.use(auth.localStrategy());
     passport.serializeUser(function(profile, done) {
-        done(null, profile.emailId);
+        done(null, profile.emailid);
     });
-    passport.deserializeUser(function(emailId, done) {
+    passport.deserializeUser(function(emailid, done) {
         Profile.findOne({
-            emailId: emailId
+            emailid: emailid
         }, function(err, profile) {
             done(null, profile);
         });
     });
+    // app.use(cookieParser());
+    // app.use(session({ secret: 'ertygfde4567uju789okmn', cookie: { maxAge : 1200000 } }));
     app.use(passport.initialize());
     app.use(passport.session());
+    app.use("/", express.static(__dirname));
 });
 
 app.listen(port, function (err) {

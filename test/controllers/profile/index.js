@@ -2,10 +2,10 @@
 
 var ProfileModel = require('../../models/profile');
 var passport = require('passport');
-var auth = require('../../lib/auth');
 
 module.exports = function (router) {
-    router.get('/', auth.isAuthenticated({role: 'user', failureRedirect: '/login'}), function(req, res) {
+    router.get('/', function(req, res) {
+        console.log(req.session);
         res.send('Hello profile');
     });
 };

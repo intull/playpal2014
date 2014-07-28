@@ -13,7 +13,7 @@ var userModel = function() {
         },
         role: {
             type: String,
-        }
+        },
     });
 
     userSchema.methods.passwordMatches = function (plainText) {

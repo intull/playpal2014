@@ -29,7 +29,10 @@ var gameModel = function() {
             teams: {
                 type: [String]
             }
-        }]
+        }],
+        imagepath: {
+            type: String
+        }
     });
 
     return mongoose.model('gameList', gameSchema);

@@ -5,7 +5,6 @@ var EventModel = require('../../../models/event');
 
 module.exports = function (router) {
     router.get('/', function (req, res) {
-        delete req.query["_"];
         GameModel.find(req.query, function( err, games) {
             res.json(games);              
         });

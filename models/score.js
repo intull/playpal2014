@@ -11,7 +11,7 @@ var scoreModel = function() {
             type: String
         },
         score: {
-            type: Number
+            type: Object
         }
     });
 

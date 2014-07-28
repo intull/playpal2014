@@ -9,15 +9,13 @@ module.exports = function (router) {
             res.json(events);            
         });
     });
-    
-    router.get('/individual/new', function (req, res) {
-        req.body = req.query;
+    router.post('/', function (req, res) {
         var newEvent  = new EventModel({
-            eventname : req.body.eventname || null,
-            start : req.body.start || null,
-            end : req.body.end || null,
-            winner : req.body.winner || null,
-            venue : req.body.venue || null,
+                        eventname : req.body.eventname || null,
+                        start : req.body.start || null,
+                        end : req.body.end || null,
+                        winner : req.body.winner || null,
+                        venue : req.body.venue || null,
         });
 
         TeamModel.find({teamname: { $in: req.body.teams.split(',')}}, {teamname: 1, teamcaptain: 1, floorno: 1, _id: 0}, function(err, teams) {
@@ -31,6 +29,4 @@ module.exports = function (router) {
             res.json({ success :  true });
         });
     });
-
-    
 };
